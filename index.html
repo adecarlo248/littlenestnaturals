@@ -362,7 +362,7 @@
 
     .product-grid { grid-template-columns: repeat(3, 1fr); }
     .bundle-grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; }
-    .bundle-showcase-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+    .bundle-showcase-grid { grid-template-columns: 1fr; align-items: stretch; max-width: 980px; margin: 0 auto; }
     .price-layout { grid-template-columns: 0.92fr 1.08fr; align-items: start; }
     .price-menu-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
     .values-grid { grid-template-columns: repeat(4, 1fr); }
@@ -423,12 +423,16 @@
 
     .bundle-card { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
     .bundle-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
-    .bundle-showcase-card { padding: 14px; }
-    .bundle-showcase-card img { width: 100%; aspect-ratio: 0.8 / 1; object-fit: cover; border-radius: 22px; margin-bottom: 18px; }
-    .bundle-showcase-card .bundle-meta { padding: 0 10px 10px; }
-    .bundle-showcase-card h3 { font-size: 1.8rem; line-height: 1; margin-bottom: 8px; }
-    .bundle-showcase-card p { color: var(--muted); font-size: 0.95rem; }
-    .bundle-price-pill { display: inline-flex; margin-top: 14px; padding: 8px 12px; border-radius: 999px; background: rgba(180,135,103,0.14); color: var(--brown); border: 1px solid rgba(180,135,103,0.22); font-weight: 900; }
+    .bundle-showcase-card { padding: 16px; display: grid; grid-template-columns: minmax(280px, 0.78fr) 1fr; gap: 24px; align-items: center; }
+    .bundle-showcase-card img { width: 100%; aspect-ratio: 0.8 / 1; object-fit: cover; border-radius: 22px; }
+    .bundle-showcase-card .bundle-meta { padding: 10px 12px; }
+    .bundle-showcase-card h3 { font-size: clamp(2rem, 4vw, 3rem); line-height: 0.95; margin-bottom: 10px; }
+    .bundle-showcase-card p { color: var(--muted); font-size: 1.05rem; margin-bottom: 16px; }
+    .bundle-readable-list { list-style: none; display: grid; gap: 9px; margin: 18px 0; color: var(--ink); font-weight: 700; }
+    .bundle-readable-list li { display: flex; gap: 9px; align-items: flex-start; }
+    .bundle-readable-list li::before { content: '❧'; color: var(--sage-dark); flex: 0 0 auto; }
+    .bundle-price-pill { display: inline-flex; margin-top: 4px; padding: 10px 14px; border-radius: 999px; background: rgba(180,135,103,0.14); color: var(--brown); border: 1px solid rgba(180,135,103,0.22); font-weight: 900; font-size: 1.05rem; }
+    .bundle-card-cta { display: inline-flex; margin-left: 10px; margin-top: 4px; color: var(--sage-dark); font-weight: 900; }
 
     .price-box {
       display: grid;
@@ -546,6 +550,8 @@
       .price-menu-grid,
       .values-grid,
       .gallery-grid { grid-template-columns: 1fr; }
+      .bundle-showcase-card { grid-template-columns: 1fr; }
+      .bundle-showcase-card img { max-height: 560px; object-position: center top; }
       .price-card { padding: 22px; }
       .price-list span em { white-space: normal; }
       .hero-cta { flex-direction: column; }
@@ -714,8 +720,14 @@
               <img src="assets/baby-bottom-care-bundle.jpg" alt="Baby Bottom Care Bundle by Little Nest Naturals" />
               <div class="bundle-meta">
                 <h3>Baby Bottom Care Bundle</h3>
-                <p>For diaper changes, tiny teeth, and soft baby skin.</p>
+                <p>Gentle daily care, bundled beautifully for diaper changes, tiny teeth, and soft baby skin.</p>
+                <ul class="bundle-readable-list">
+                  <li>Little Nest Tush Cream or Milk Drunk Bum Balm</li>
+                  <li>Tiny Teeth Soother</li>
+                  <li>Little Love Lotion</li>
+                </ul>
                 <span class="bundle-price-pill">$40 bundle</span>
+                <a class="bundle-card-cta" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order this bundle →</a>
               </div>
             </article>
 
@@ -723,8 +735,14 @@
               <img src="assets/make-it-glow-care-bundle.jpg" alt="Make It Glow Care Bundle by Little Nest Naturals" />
               <div class="bundle-meta">
                 <h3>Make It Glow Care Bundle</h3>
-                <p>Glow Nest Sugar Scrub for body or feet, paired with Little Love Lotion.</p>
+                <p>A soft body-care set for glowing skin from bump to toe.</p>
+                <ul class="bundle-readable-list">
+                  <li>Glow Nest Sugar Scrub — Body Polish or Post Pregnancy</li>
+                  <li>Glow Nest Sugar Scrub — Feet Scrub</li>
+                  <li>Little Love Lotion</li>
+                </ul>
                 <span class="bundle-price-pill">$45 bundle</span>
+                <a class="bundle-card-cta" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order this bundle →</a>
               </div>
             </article>
 
@@ -732,8 +750,14 @@
               <img src="assets/nest-bestsellers-bundle.jpg" alt="Nest Bestsellers Bundle by Little Nest Naturals" />
               <div class="bundle-meta">
                 <h3>Nest Bestsellers Bundle</h3>
-                <p>A little nest of customer favourites: scrub, Tiny Toes Butter, and lotion.</p>
+                <p>A little nest of customer favourites in one gift-ready set.</p>
+                <ul class="bundle-readable-list">
+                  <li>Glow Nest Sugar Scrub or Nest Unwind Soak</li>
+                  <li>Tiny Toes Butter</li>
+                  <li>Little Love Lotion</li>
+                </ul>
                 <span class="bundle-price-pill">$58 bundle</span>
+                <a class="bundle-card-cta" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order this bundle →</a>
               </div>
             </article>
           </div>
