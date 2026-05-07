@@ -238,8 +238,24 @@
       color: var(--muted);
       font-size: clamp(1.03rem, 2vw, 1.2rem);
       max-width: 650px;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
+
+    .founder-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      color: var(--cocoa);
+      font-weight: 800;
+      background: rgba(255,250,244,0.58);
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+      box-shadow: 0 14px 34px rgba(75,53,40,0.08);
+    }
+
+    .founder-line span { color: var(--sage-dark); }
 
     .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
 
@@ -300,6 +316,23 @@
 
     .floating-card strong { color: var(--cocoa); display: block; margin-bottom: 4px; }
     .floating-card span { color: var(--muted); font-size: 14px; }
+
+    .hero-product-note {
+      position: absolute;
+      right: -18px;
+      top: 26px;
+      max-width: 250px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: rgba(79,96,72,0.88);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: 0 18px 46px rgba(75,53,40,0.18);
+      backdrop-filter: blur(12px);
+      font-weight: 800;
+    }
+
+    .hero-product-note span { display: block; margin-top: 4px; color: rgba(255,250,244,0.78); font-size: 13px; font-weight: 600; }
 
     .section-head {
       max-width: 780px;
@@ -509,7 +542,8 @@
       .hero-cta { flex-direction: column; }
       .btn-primary,
       .btn-secondary { width: 100%; }
-      .floating-card { position: static; margin-top: 16px; max-width: none; }
+      .floating-card,
+      .hero-product-note { position: static; margin-top: 16px; max-width: none; }
       .price-box { grid-template-columns: 1fr; }
       .cta-panel { padding: 34px 22px; }
       .bundle-photo img { min-height: 360px; }
@@ -543,24 +577,26 @@
         <div class="container hero-grid">
           <div>
             <div class="eyebrow">Nourish · Nurture · Restore</div>
-            <h1>Natural care for <span>mothers & baby.</span></h1>
-            <p class="hero-copy">Small-batch body care made with gentle, natural ingredients for the soft, messy, beautiful seasons of motherhood — from baby bottoms to mama self-care.</p>
+            <h1>Handmade natural care by <span>Lindsay DeCarlo.</span></h1>
+            <p class="hero-copy">Little Nest Naturals creates small-batch mom and baby products for the everyday rituals that matter — soft lotion, gentle balms, sugar scrubs, tiny teeth support, chest rub, rollers, soaps, and gift-ready bundles.</p>
+            <div class="founder-line">Made by <span>Lindsay DeCarlo</span> for mothers, babies, and little nests.</div>
             <div class="hero-cta">
-              <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Place an Order</a>
-              <a class="btn-secondary" href="#bundle">View Baby Bundle</a>
+              <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Shop the Products</a>
+              <a class="btn-secondary" href="#price-list">See Product Prices</a>
             </div>
             <div class="trust-row">
-              <span>100% natural</span>
-              <span>Small batch</span>
-              <span>Handmade in Canada</span>
-              <span>Mom & baby care</span>
+              <span>Creams, balms & butters</span>
+              <span>Body care</span>
+              <span>Baby care</span>
+              <span>Wellness & home care</span>
             </div>
           </div>
 
           <div class="hero-photo-card">
-            <img src="assets/founder-products.jpg" alt="Little Nest Naturals founder with baby and natural product collection" class="hero-photo" />
+            <img src="assets/founder-products.jpg" alt="Lindsay DeCarlo with baby and Little Nest Naturals product collection" class="hero-photo" />
+            <div class="hero-product-note">Featured favourites<span>Tush Cream · Bum Balm · Little Love Lotion · Sugar Scrubs · Tiny Teeth Soother</span></div>
             <div class="floating-card">
-              <strong>Gentle products. Beautifully simple routines.</strong>
+              <strong>Lindsay DeCarlo, founder of Little Nest Naturals.</strong>
               <span>Natural care made for everyday family life.</span>
             </div>
           </div>
