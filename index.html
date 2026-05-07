@@ -312,6 +312,7 @@
 
     .product-grid,
     .bundle-grid,
+    .bundle-showcase-grid,
     .values-grid,
     .gallery-grid {
       display: grid;
@@ -320,6 +321,7 @@
 
     .product-grid { grid-template-columns: repeat(3, 1fr); }
     .bundle-grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; }
+    .bundle-showcase-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
     .values-grid { grid-template-columns: repeat(4, 1fr); }
     .gallery-grid { grid-template-columns: 1.2fr 0.8fr 1fr; }
 
@@ -364,6 +366,12 @@
 
     .bundle-card { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
     .bundle-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
+    .bundle-showcase-card { padding: 14px; }
+    .bundle-showcase-card img { width: 100%; aspect-ratio: 0.8 / 1; object-fit: cover; border-radius: 22px; margin-bottom: 18px; }
+    .bundle-showcase-card .bundle-meta { padding: 0 10px 10px; }
+    .bundle-showcase-card h3 { font-size: 1.8rem; line-height: 1; margin-bottom: 8px; }
+    .bundle-showcase-card p { color: var(--muted); font-size: 0.95rem; }
+    .bundle-price-pill { display: inline-flex; margin-top: 14px; padding: 8px 12px; border-radius: 999px; background: rgba(180,135,103,0.14); color: var(--brown); border: 1px solid rgba(180,135,103,0.22); font-weight: 900; }
 
     .price-box {
       display: grid;
@@ -460,6 +468,7 @@
       .bundle-grid,
       .review-layout { grid-template-columns: 1fr; }
       .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .bundle-showcase-grid { grid-template-columns: 1fr; }
       .values-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       h1 { max-width: 12ch; }
@@ -474,6 +483,7 @@
       .hero { padding-top: 50px; }
       h1 { font-size: 4rem; }
       .product-grid,
+      .bundle-showcase-grid,
       .values-grid,
       .gallery-grid { grid-template-columns: 1fr; }
       .hero-cta { flex-direction: column; }
@@ -569,25 +579,44 @@
       </section>
 
       <section id="bundle">
-        <div class="container bundle-grid">
-          <div class="bundle-card bundle-photo">
-            <img src="assets/baby-bottom-care-bundle.jpg" alt="Baby Bottom Care Bundle by Little Nest Naturals" />
+        <div class="container">
+          <div class="section-head center">
+            <div class="eyebrow">Featured Bundles</div>
+            <h2>Customer favourites, bundled beautifully.</h2>
+            <p class="section-sub">Simple gift-ready sets for babies, moms, and soft everyday care. Use the order form to confirm current stock, scent options, and pickup/delivery details.</p>
           </div>
-          <div class="bundle-card">
-            <div class="eyebrow">Featured Bundle</div>
-            <h2>Baby Bottom Care Bundle</h2>
-            <p>Gentle baby care, bundled beautifully. A simple set for diaper changes, tiny teeth, and soft baby skin.</p>
-            <div class="price-box">
-              <div class="price">$40</div>
-              <div class="price-note">Bundle price shown from current promo graphic. Final availability confirmed through order form.</div>
-            </div>
-            <h3>Included:</h3>
-            <ul class="included">
-              <li>Little Nest Tush Cream or Milk Drunk Bum Balm</li>
-              <li>Tiny Teeth Soother</li>
-              <li>Little Love Lotion</li>
-            </ul>
-            <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order the Bundle</a>
+
+          <div class="bundle-showcase-grid">
+            <article class="card bundle-showcase-card">
+              <img src="assets/baby-bottom-care-bundle.jpg" alt="Baby Bottom Care Bundle by Little Nest Naturals" />
+              <div class="bundle-meta">
+                <h3>Baby Bottom Care Bundle</h3>
+                <p>For diaper changes, tiny teeth, and soft baby skin.</p>
+                <span class="bundle-price-pill">$40 bundle</span>
+              </div>
+            </article>
+
+            <article class="card bundle-showcase-card">
+              <img src="assets/make-it-glow-care-bundle.jpg" alt="Make It Glow Care Bundle by Little Nest Naturals" />
+              <div class="bundle-meta">
+                <h3>Make It Glow Care Bundle</h3>
+                <p>Glow Nest Sugar Scrub for body or feet, paired with Little Love Lotion.</p>
+                <span class="bundle-price-pill">$45 bundle</span>
+              </div>
+            </article>
+
+            <article class="card bundle-showcase-card">
+              <img src="assets/nest-bestsellers-bundle.jpg" alt="Nest Bestsellers Bundle by Little Nest Naturals" />
+              <div class="bundle-meta">
+                <h3>Nest Bestsellers Bundle</h3>
+                <p>A little nest of customer favourites: scrub, Tiny Toes Butter, and lotion.</p>
+                <span class="bundle-price-pill">$58 bundle</span>
+              </div>
+            </article>
+          </div>
+
+          <div style="display:flex; justify-content:center; margin-top: 28px;">
+            <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order a Bundle</a>
           </div>
         </div>
       </section>
@@ -609,9 +638,9 @@
 
       <section>
         <div class="container gallery-grid">
-          <img src="assets/product-theme-4.jpg" alt="Little Nest Naturals product bundle graphic" />
+          <img src="assets/nest-bestsellers-bundle.jpg" alt="Nest Bestsellers Bundle graphic" />
           <img src="assets/product-theme-2.jpg" alt="Little Nest Naturals products stacked" />
-          <img src="assets/product-theme-3.jpg" alt="Little Nest Naturals scent and product menu" />
+          <img src="assets/make-it-glow-care-bundle.jpg" alt="Make It Glow Care Bundle graphic" />
         </div>
       </section>
 
