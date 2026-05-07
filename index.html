@@ -354,8 +354,7 @@
     .bundle-showcase-grid,
     .price-layout,
     .price-menu-grid,
-    .values-grid,
-    .gallery-grid {
+    .values-grid {
       display: grid;
       gap: 22px;
     }
@@ -366,7 +365,6 @@
     .price-layout { grid-template-columns: 0.92fr 1.08fr; align-items: start; }
     .price-menu-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
     .values-grid { grid-template-columns: repeat(4, 1fr); }
-    .gallery-grid { grid-template-columns: 1.2fr 0.8fr 1fr; }
 
     .card,
     .product-card,
@@ -462,16 +460,6 @@
     .value-card { padding: 26px; }
     .value-icon { font-size: 30px; margin-bottom: 14px; }
 
-    .gallery-grid img {
-      width: 100%;
-      height: 100%;
-      min-height: 340px;
-      object-fit: cover;
-      border-radius: 30px;
-      border: 1px solid var(--line);
-      box-shadow: 0 18px 58px rgba(75,53,40,0.12);
-    }
-
     .review-section {
       background: rgba(244,230,214,0.48);
       border-top: 1px solid var(--line);
@@ -546,7 +534,6 @@
       .bundle-showcase-grid { grid-template-columns: 1fr; }
       .price-image-card { position: static; }
       .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
       h1 { max-width: 12ch; }
     }
 
@@ -561,8 +548,7 @@
       .product-grid,
       .bundle-showcase-grid,
       .price-menu-grid,
-      .values-grid,
-      .gallery-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
       .bundle-showcase-card { grid-template-columns: 1fr; }
       .bundle-showcase-card img { max-height: 560px; object-position: center top; }
       .price-card { padding: 22px; }
@@ -808,15 +794,6 @@
             <article class="value-card"><div class="value-icon">🍼</div><h3>Mom & Baby</h3><p>Products built around the real routines of new moms, babies, and growing families.</p></article>
             <article class="value-card"><div class="value-icon">🎁</div><h3>Gift Ready</h3><p>Soft, beautiful bundles for baby showers, postpartum gifts, and everyday care.</p></article>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container gallery-grid">
-          <img src="assets/nest-bestsellers-bundle.jpg" alt="Nest Bestsellers Bundle graphic" />
-          <img src="assets/product-theme-2.jpg" alt="Little Nest Naturals products stacked" />
-          <img src="assets/make-it-glow-care-bundle.jpg" alt="Make It Glow Care Bundle graphic" />
-          <img src="assets/momma-reset-bundle.jpg" alt="Momma Reset Bundle graphic" />
         </div>
       </section>
 
