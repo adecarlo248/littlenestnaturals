@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Little Nest Naturals creates small-batch, natural mom and baby care products handcrafted in Canada. Gentle bundles, body care, baby care, and thoughtful gifts." />
+  <title>Little Nest Naturals | Natural Mom & Baby Care</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+    :root {
+      --cream: #fbf4ea;
+      --cream-2: #f4e6d6;
+      --linen: #efe0cf;
+      --sage: #7d8b73;
+      --sage-dark: #4f6048;
+      --olive: #596548;
+      --clay: #b48767;
+      --cocoa: #4b3528;
+      --brown: #6f4d38;
+      --rose: #d8b7a4;
+      --ink: #31261f;
+      --muted: #75685c;
+      --white: #fffaf4;
+      --line: rgba(111, 77, 56, 0.17);
+      --shadow: 0 24px 80px rgba(75, 53, 40, 0.15);
+      --radius: 28px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(125, 139, 115, 0.20), transparent 24%),
+        radial-gradient(circle at 92% 4%, rgba(216, 183, 164, 0.28), transparent 28%),
+        linear-gradient(180deg, var(--cream) 0%, #fffaf4 40%, #f7eadc 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .botanical-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.9;
+      overflow: hidden;
+    }
+
+    .botanical-bg::before,
+    .botanical-bg::after {
+      content: '';
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      filter: blur(75px);
+      opacity: 0.28;
+    }
+
+    .botanical-bg::before { left: -140px; top: 90px; background: var(--sage); }
+    .botanical-bg::after { right: -120px; top: 280px; background: var(--rose); }
+
+    .leaf-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background-image:
+        radial-gradient(ellipse at 18% 24%, var(--sage-dark) 0 2px, transparent 3px),
+        radial-gradient(ellipse at 22% 28%, var(--sage-dark) 0 6px, transparent 7px),
+        radial-gradient(ellipse at 82% 18%, var(--brown) 0 2px, transparent 3px),
+        radial-gradient(ellipse at 78% 23%, var(--brown) 0 7px, transparent 8px);
+      background-size: 120px 120px;
+    }
+
+    .page { position: relative; z-index: 1; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251, 244, 234, 0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #fffaf4, #ead8c7);
+      border: 1px solid rgba(111,77,56,0.18);
+      box-shadow: 0 10px 28px rgba(75,53,40,0.12);
+      color: var(--sage-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--cocoa);
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--sage-dark);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .nav-links { display: flex; gap: 24px; align-items: center; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--sage-dark); }
+
+    .btn,
+    button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+      color: var(--white);
+      box-shadow: 0 18px 42px rgba(79, 96, 72, 0.24);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover { transform: translateY(-2px); }
+    .btn-primary:hover { box-shadow: 0 22px 52px rgba(79, 96, 72, 0.32); }
+
+    .btn-secondary {
+      color: var(--cocoa);
+      background: rgba(255,255,255,0.36);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover { border-color: rgba(79, 96, 72, 0.35); box-shadow: 0 14px 34px rgba(75,53,40,0.10); }
+
+    section { padding: 96px 0; }
+
+    .hero {
+      min-height: calc(100vh - 86px);
+      display: flex;
+      align-items: center;
+      padding: 70px 0 96px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(125,139,115,0.11);
+      border: 1px solid rgba(125,139,115,0.2);
+      color: var(--sage-dark);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before { content: '✦'; color: var(--clay); }
+
+    h1,
+    h2,
+    h3,
+    .script {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--cocoa);
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      font-size: clamp(3.6rem, 7vw, 6.7rem);
+      line-height: 0.88;
+      margin-bottom: 24px;
+      max-width: 10ch;
+    }
+
+    h1 span,
+    .accent { color: var(--sage-dark); }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: clamp(1.03rem, 2vw, 1.2rem);
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .trust-row span {
+      color: var(--olive);
+      background: rgba(255,255,255,0.44);
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .hero-photo-card {
+      border-radius: 42px;
+      padding: 14px;
+      background: rgba(255,250,244,0.58);
+      border: 1px solid rgba(111,77,56,0.16);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .hero-photo-card::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border-radius: 56px;
+      border: 1px solid rgba(125,139,115,0.16);
+      z-index: -1;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 0.93 / 1;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -22px;
+      bottom: 28px;
+      max-width: 270px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,250,244,0.88);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 48px rgba(75,53,40,0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-card strong { color: var(--cocoa); display: block; margin-bottom: 4px; }
+    .floating-card span { color: var(--muted); font-size: 14px; }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 42px;
+    }
+
+    .center { text-align: center; margin-left: auto; margin-right: auto; }
+    h2 { font-size: clamp(2.45rem, 4.5vw, 4.4rem); line-height: 0.98; margin-bottom: 14px; }
+    .section-sub { color: var(--muted); font-size: 1.04rem; }
+
+    .product-grid,
+    .bundle-grid,
+    .values-grid,
+    .gallery-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .bundle-grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; }
+    .values-grid { grid-template-columns: repeat(4, 1fr); }
+    .gallery-grid { grid-template-columns: 1.2fr 0.8fr 1fr; }
+
+    .card,
+    .product-card,
+    .bundle-card,
+    .value-card,
+    .review-card {
+      border-radius: var(--radius);
+      background: rgba(255,250,244,0.64);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 60px rgba(75,53,40,0.10);
+      overflow: hidden;
+    }
+
+    .product-card { padding: 16px; }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1.08;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+
+    .product-card h3,
+    .bundle-card h3,
+    .value-card h3 { font-size: 1.75rem; line-height: 1; margin-bottom: 8px; }
+    .product-card p,
+    .bundle-card p,
+    .value-card p { color: var(--muted); font-size: 0.97rem; }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag-list span {
+      background: rgba(125,139,115,0.11);
+      color: var(--sage-dark);
+      border: 1px solid rgba(125,139,115,0.18);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bundle-card { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+    .bundle-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
+
+    .price-box {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      margin: 22px 0;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(244,230,214,0.72);
+      border: 1px solid var(--line);
+    }
+
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      line-height: 0.9;
+      color: var(--brown);
+      font-weight: 700;
+    }
+
+    .price-note { color: var(--muted); font-weight: 700; }
+
+    .included { list-style: none; display: grid; gap: 11px; margin: 18px 0 26px; color: var(--ink); }
+    .included li::before { content: '❧'; color: var(--sage-dark); margin-right: 10px; }
+
+    .value-card { padding: 26px; }
+    .value-icon { font-size: 30px; margin-bottom: 14px; }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 58px rgba(75,53,40,0.12);
+    }
+
+    .review-section {
+      background: rgba(244,230,214,0.48);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .review-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .review-card { padding: 34px; }
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cocoa); line-height: 1.12; margin-bottom: 18px; }
+    .small { color: var(--muted); font-size: 0.94rem; }
+
+    .cta-panel {
+      border-radius: 38px;
+      padding: 52px;
+      background:
+        linear-gradient(135deg, rgba(79,96,72,0.92), rgba(125,139,115,0.82)),
+        url('assets/product-theme-4.jpg') center/cover;
+      background-blend-mode: multiply;
+      color: var(--white);
+      text-align: center;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-panel h2 { color: var(--white); }
+    .cta-panel p { color: rgba(255,250,244,0.84); max-width: 680px; margin: 0 auto 26px; }
+    .cta-panel .btn-primary { background: var(--white); color: var(--sage-dark); box-shadow: 0 18px 44px rgba(0,0,0,0.18); }
+    .cta-panel .btn-secondary { color: var(--white); border-color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.09); }
+
+    footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links { display: flex; gap: 14px; flex-wrap: wrap; font-weight: 700; color: var(--sage-dark); }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .bundle-grid,
+      .review-layout { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      h1 { max-width: 12ch; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .brand-text strong { font-size: 23px; }
+      .brand-mark { width: 48px; height: 48px; }
+      .nav-inner { min-height: 76px; }
+      section { padding: 72px 0; }
+      .hero { padding-top: 50px; }
+      h1 { font-size: 4rem; }
+      .product-grid,
+      .values-grid,
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; }
+      .btn-primary,
+      .btn-secondary { width: 100%; }
+      .floating-card { position: static; margin-top: 16px; max-width: none; }
+      .price-box { grid-template-columns: 1fr; }
+      .cta-panel { padding: 34px 22px; }
+      .bundle-photo img { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="botanical-bg" aria-hidden="true"><div class="leaf-pattern"></div></div>
+
+  <div class="page">
+    <nav>
+      <div class="container nav-inner">
+        <a href="#top" class="brand" aria-label="Little Nest Naturals home">
+          <div class="brand-mark">lnn</div>
+          <div class="brand-text">
+            <strong>little nest</strong>
+            <span>naturals</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="#products">Products</a>
+          <a href="#bundle">Bundle</a>
+          <a href="#reviews">Reviews</a>
+        </div>
+        <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order Now</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Nourish · Nurture · Restore</div>
+            <h1>Natural care for <span>mothers & baby.</span></h1>
+            <p class="hero-copy">Small-batch body care made with gentle, natural ingredients for the soft, messy, beautiful seasons of motherhood — from baby bottoms to mama self-care.</p>
+            <div class="hero-cta">
+              <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Place an Order</a>
+              <a class="btn-secondary" href="#bundle">View Baby Bundle</a>
+            </div>
+            <div class="trust-row">
+              <span>100% natural</span>
+              <span>Small batch</span>
+              <span>Handmade in Canada</span>
+              <span>Mom & baby care</span>
+            </div>
+          </div>
+
+          <div class="hero-photo-card">
+            <img src="assets/founder-products.jpg" alt="Little Nest Naturals founder with baby and natural product collection" class="hero-photo" />
+            <div class="floating-card">
+              <strong>Gentle products. Beautifully simple routines.</strong>
+              <span>Natural care made for everyday family life.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products">
+        <div class="container">
+          <div class="section-head center">
+            <div class="eyebrow">The Collection</div>
+            <h2>Soft, simple care from head to tiny toes.</h2>
+            <p class="section-sub">Thoughtful natural products for baby care, mama care, and cozy gifting. Current availability and scent options are handled through the order form.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <img src="assets/product-theme-1.jpg" alt="Little Nest Naturals product display" />
+              <h3>Baby Care</h3>
+              <p>Tush Cream, Milk Drunk Bum Balm, Tiny Teeth Soother, and gentle essentials for the daily baby routine.</p>
+              <div class="tag-list"><span>Baby bottoms</span><span>Teething</span><span>Gentle care</span></div>
+            </article>
+            <article class="product-card">
+              <img src="assets/product-theme-2.jpg" alt="Little Nest Naturals lotion and skincare products" />
+              <h3>Motherhood Care</h3>
+              <p>Lotions, sugar scrubs, nipple butter, and small-batch products made for the tender seasons of motherhood.</p>
+              <div class="tag-list"><span>Body care</span><span>Self-care</span><span>Natural</span></div>
+            </article>
+            <article class="product-card">
+              <img src="assets/product-theme-3.jpg" alt="Little Nest Naturals product and scent selection" />
+              <h3>Bundles & Gifts</h3>
+              <p>Beautifully packaged sets that make ordering simple for baby showers, new moms, and everyday family care.</p>
+              <div class="tag-list"><span>Bundles</span><span>Gifting</span><span>Seasonal</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bundle">
+        <div class="container bundle-grid">
+          <div class="bundle-card bundle-photo">
+            <img src="assets/baby-bottom-care-bundle.jpg" alt="Baby Bottom Care Bundle by Little Nest Naturals" />
+          </div>
+          <div class="bundle-card">
+            <div class="eyebrow">Featured Bundle</div>
+            <h2>Baby Bottom Care Bundle</h2>
+            <p>Gentle baby care, bundled beautifully. A simple set for diaper changes, tiny teeth, and soft baby skin.</p>
+            <div class="price-box">
+              <div class="price">$40</div>
+              <div class="price-note">Bundle price shown from current promo graphic. Final availability confirmed through order form.</div>
+            </div>
+            <h3>Included:</h3>
+            <ul class="included">
+              <li>Little Nest Tush Cream or Milk Drunk Bum Balm</li>
+              <li>Tiny Teeth Soother</li>
+              <li>Little Love Lotion</li>
+            </ul>
+            <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order the Bundle</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head center">
+            <div class="eyebrow">Why Families Love It</div>
+            <h2>Natural, handmade, and easy to gift.</h2>
+          </div>
+          <div class="values-grid">
+            <article class="value-card"><div class="value-icon">🌿</div><h3>Natural Ingredients</h3><p>Made with simple, thoughtful ingredients families can feel good about using.</p></article>
+            <article class="value-card"><div class="value-icon">🤍</div><h3>Small Batch</h3><p>Handcrafted in smaller runs with care, intention, and attention to detail.</p></article>
+            <article class="value-card"><div class="value-icon">🍼</div><h3>Mom & Baby</h3><p>Products built around the real routines of new moms, babies, and growing families.</p></article>
+            <article class="value-card"><div class="value-icon">🎁</div><h3>Gift Ready</h3><p>Soft, beautiful bundles for baby showers, postpartum gifts, and everyday care.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container gallery-grid">
+          <img src="assets/product-theme-4.jpg" alt="Little Nest Naturals product bundle graphic" />
+          <img src="assets/product-theme-2.jpg" alt="Little Nest Naturals products stacked" />
+          <img src="assets/product-theme-3.jpg" alt="Little Nest Naturals scent and product menu" />
+        </div>
+      </section>
+
+      <section class="review-section" id="reviews">
+        <div class="container review-layout">
+          <div class="section-head">
+            <div class="eyebrow">Share the Love</div>
+            <h2>Your review helps another mom choose with confidence.</h2>
+            <p class="section-sub">Already ordered from Little Nest Naturals? Leave a quick review and help the next family find their new favourite natural care product.</p>
+          </div>
+          <div class="review-card">
+            <p class="quote">“Soft care, natural ingredients, and a brand built around the tenderness of motherhood.”</p>
+            <p class="small">Use the review form to share what you ordered, what you loved, and how it fit into your family routine.</p>
+            <div style="height: 22px;"></div>
+            <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd_B7pQP1IS-LvNlzsoHUNELaQV_y2HYIU-2xKqGPuRFKsprA/viewform?usp=dialog">Leave a Review</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="cta-panel">
+            <h2>Ready to order?</h2>
+            <p>Choose your products, confirm current availability, and send your order directly through the form. For questions, reach out to Little Nest Naturals on Instagram/Facebook or by email.</p>
+            <div class="hero-cta" style="justify-content:center; margin-bottom: 0;">
+              <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Open Order Form</a>
+              <a class="btn-secondary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd_B7pQP1IS-LvNlzsoHUNELaQV_y2HYIU-2xKqGPuRFKsprA/viewform?usp=dialog">Review Form</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <div class="brand-text"><strong>little nest</strong><span>naturals</span></div>
+          <p>Natural mom & baby care · Handmade in Canada</p>
+          <p class="small">Always review ingredients before use. For sensitive skin, patch test first and discontinue if irritation occurs.</p>
+        </div>
+        <div class="footer-links">
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSctdXZSxY2DPIWMLJX3ANXUCUsZQQMwKCbKN-7fo7uGNbxyfA/viewform?usp=sharing&ouid=110825510580070357305">Order</a>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd_B7pQP1IS-LvNlzsoHUNELaQV_y2HYIU-2xKqGPuRFKsprA/viewform?usp=dialog">Reviews</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
