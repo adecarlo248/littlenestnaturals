@@ -429,6 +429,15 @@
     .price-list span { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; color: var(--brown); font-weight: 900; line-height: 1.35; }
     .price-list span em { font-style: normal; display: inline-flex; padding: 6px 9px; border-radius: 999px; background: rgba(180,135,103,0.12); border: 1px solid rgba(180,135,103,0.18); white-space: nowrap; }
     .price-note-card { margin-top: 22px; padding: 22px; border-radius: 24px; background: rgba(125,139,115,0.10); border: 1px solid rgba(125,139,115,0.16); color: var(--sage-dark); font-weight: 700; }
+    .scent-menu-card { margin-top: 22px; padding: 24px; border-radius: 24px; background: rgba(255,251,245,0.86); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(79,50,34,0.07); }
+    .scent-menu-card h3 { font-size: 1.85rem; line-height: 1; margin-bottom: 8px; }
+    .scent-menu-card > p { color: var(--muted); margin-bottom: 18px; font-weight: 700; }
+    .scent-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .scent-item { padding: 14px 14px 13px; border-radius: 18px; background: rgba(248,238,226,0.58); border: 1px solid rgba(180,135,103,0.16); }
+    .scent-title { display: flex; gap: 10px; align-items: baseline; color: var(--cocoa); font-weight: 900; line-height: 1.15; }
+    .scent-number { width: 28px; height: 28px; flex: 0 0 auto; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid rgba(180,135,103,0.35); color: var(--brown); background: rgba(255,251,245,0.86); font-size: 0.9rem; }
+    .scent-blend { margin-top: 7px; color: var(--brown); font-weight: 800; font-size: 0.92rem; }
+    .scent-copy { margin-top: 7px; color: var(--muted); font-weight: 650; line-height: 1.45; font-style: italic; }
 
     .bundle-card { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
     .bundle-photo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
@@ -559,7 +568,8 @@
       .product-grid,
       .bundle-showcase-grid,
       .price-menu-grid,
-      .values-grid { grid-template-columns: 1fr; }
+      .values-grid,
+      .scent-grid { grid-template-columns: 1fr; }
       .bundle-showcase-card { grid-template-columns: 1fr; }
       .bundle-showcase-card img { max-height: 560px; object-position: center top; }
       .price-card { padding: 22px; }
@@ -712,6 +722,23 @@
               </div>
 
               <div class="price-note-card">Prices are pulled from the current Little Nest Naturals product menu. Product availability may rotate because items are made in small batches.</div>
+
+              <article class="scent-menu-card">
+                <h3>Choose Your Scent</h3>
+                <p>A little scent menu for your favourite Little Nest Naturals goodies.</p>
+                <div class="scent-grid">
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">1</span><strong>Gentle Glow</strong></div><div class="scent-blend">Lavender, Frankincense, Sweet Orange</div><div class="scent-copy">Soft, glowy, and quietly fancy — like your skin just got its life together.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">2</span><strong>Snuggle Spell</strong></div><div class="scent-blend">Lavender, Chamomile</div><div class="scent-copy">For the days when everyone needs to calm their tiny tots and their tiny tempers.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">3</span><strong>Warm Hug</strong></div><div class="scent-blend">Vanilla, Orange</div><div class="scent-copy">A cozy cuddle in scent form — warm, sweet, and impossible not to love.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">4</span><strong>Petal Soft</strong></div><div class="scent-blend">Lavender, Geranium</div><div class="scent-copy">Pretty, floral, and soft enough to make your self-care routine blush.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">5</span><strong>Sunkissed</strong></div><div class="scent-blend">Orange, Frankincense</div><div class="scent-copy">Sunshine in a jar — bright, happy, and just the right amount of golden-hour glow.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">6</span><strong>Calm</strong></div><div class="scent-blend">Lavender, Bergamot</div><div class="scent-copy">Fresh, clean, and collected — even if the rest of life is a beautiful little mess.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">7</span><strong>Mama Reset</strong></div><div class="scent-blend">Lavender, Frankincense, Sage</div><div class="scent-copy">A deep breath for mama — because sometimes a reset is part of the routine.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">8</span><strong>Bloom</strong></div><div class="scent-blend">Rose, Lavender</div><div class="scent-copy">Soft, rosy, and effortlessly lovely — a little glow-up without the fuss.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">9</span><strong>Hush Baby</strong></div><div class="scent-blend">Lavender, Chamomile</div><div class="scent-copy">Gentle, snuggly, and sweet — made for the tiniest little nesters.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">10</span><strong>Bare Naked</strong></div><div class="scent-blend">Unscented</div><div class="scent-copy">No scent, no fuss, just the good stuff simple as that.</div></div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
