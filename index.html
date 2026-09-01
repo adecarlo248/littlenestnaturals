@@ -432,8 +432,11 @@
     .scent-menu-card { margin-top: 22px; padding: 24px; border-radius: 24px; background: rgba(255,251,245,0.86); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(79,50,34,0.07); }
     .scent-menu-card h3 { font-size: 1.85rem; line-height: 1; margin-bottom: 8px; }
     .scent-menu-card > p { color: var(--muted); margin-bottom: 18px; font-weight: 700; }
+    .scent-products { color: var(--brown); font-weight: 800; margin: -4px 0 20px; line-height: 1.55; }
+    .scent-section-title { margin: 22px 0 12px; font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; color: var(--cocoa); letter-spacing: 0; line-height: 1; }
     .scent-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .scent-item { padding: 14px 14px 13px; border-radius: 18px; background: rgba(248,238,226,0.58); border: 1px solid rgba(180,135,103,0.16); }
+    .scent-item.mens { background: rgba(125,139,115,0.10); border-color: rgba(75,95,118,0.18); }
     .scent-title { display: flex; gap: 10px; align-items: baseline; color: var(--cocoa); font-weight: 900; line-height: 1.15; }
     .scent-number { width: 28px; height: 28px; flex: 0 0 auto; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid rgba(180,135,103,0.35); color: var(--brown); background: rgba(255,251,245,0.86); font-size: 0.9rem; }
     .scent-blend { margin-top: 7px; color: var(--brown); font-weight: 800; font-size: 0.92rem; }
@@ -629,10 +632,10 @@
 
           <div class="hero-photo-card">
             <img src="assets/founder-products.jpg" alt="Lindsay DeCarlo with baby and Little Nest Naturals product collection" class="hero-photo" />
-            <div class="hero-product-note">Featured favourites<span>Tush Cream · Bum Balm · Little Love Lotion · Sugar Scrubs · Tiny Teeth Soother</span></div>
+            <div class="hero-product-note">Featured favourites<span>Tush Cream · Bum Balm · Little Love Lotion · Sugar Scrubs · Beard Nest Balm · Tiny Teeth Soother</span></div>
             <div class="floating-card">
               <strong>Lindsay DeCarlo, founder of Little Nest Naturals.</strong>
-              <span>Natural care made for everyday family life.</span>
+              <span>Organic care made for everyday family life.</span>
             </div>
           </div>
         </div>
@@ -642,8 +645,8 @@
         <div class="container">
           <div class="section-head center">
             <div class="eyebrow">The Collection</div>
-            <h2>Soft, simple care from head to tiny toes.</h2>
-            <p class="section-sub">Thoughtful natural products for baby care, mama care, and cozy gifting. Current availability and scent options are handled through the order form.</p>
+            <h2>Soft, simple care for the whole nest.</h2>
+            <p class="section-sub">Thoughtful organic products for women, postpartum care, babies, men's care, the whole nest, and cozy gifting. Current availability and scent options are handled through the order form.</p>
           </div>
 
           <div class="product-grid">
@@ -655,14 +658,20 @@
             </article>
             <article class="product-card">
               <img src="assets/product-theme-2.jpg" alt="Little Nest Naturals lotion and skincare products" />
-              <h3>Motherhood Care</h3>
-              <p>Lotions, sugar scrubs, nipple butter, and small-batch products made for the tender seasons of motherhood.</p>
-              <div class="tag-list"><span>Body care</span><span>Self-care</span><span>Natural</span></div>
+              <h3>Women & Postpartum Care</h3>
+              <p>Lotions, sugar scrubs, nipple butter, and small-batch products made for everyday care and postpartum seasons.</p>
+              <div class="tag-list"><span>Body care</span><span>Self-care</span><span>Organic</span></div>
+            </article>
+            <article class="product-card">
+              <img src="assets/product-theme-4.jpg" alt="Little Nest Naturals handmade care products" />
+              <h3>Men's Line</h3>
+              <p>Beard Nest Balm, Dude Butter, and Work Boot Foot Scrub made for practical everyday care.</p>
+              <div class="tag-list"><span>Beard care</span><span>Scrubs</span><span>Organic</span></div>
             </article>
             <article class="product-card">
               <img src="assets/product-theme-1.jpg" alt="Little Nest Naturals product display" />
               <h3>Bundles & Gifts</h3>
-              <p>Beautifully packaged sets that make ordering simple for baby showers, new moms, and everyday family care.</p>
+              <p>Beautifully packaged sets that make ordering simple for baby showers, postpartum gifts, men's care, and everyday family care.</p>
               <div class="tag-list"><span>Bundles</span><span>Gifting</span><span>Seasonal</span></div>
             </article>
           </div>
@@ -685,40 +694,44 @@
             <div>
               <div class="price-menu-grid">
                 <article class="price-card">
-                  <h3>Creams, Balms & Butters</h3>
+                  <h3>Baby Care</h3>
                   <ul class="price-list">
                     <li><strong>Little Nest Tush Cream</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
                     <li><strong>Milk Drunk Bum Balm</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                    <li><strong>Little Love Lotion</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                    <li><strong>Nip Happens Butter</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                  </ul>
-                </article>
-
-                <article class="price-card">
-                  <h3>Body Care</h3>
-                  <ul class="price-list">
-                    <li><strong>Glow Nest Sugar Scrub — Body Polish</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                    <li><strong>Glow Nest Sugar Scrub — Post Pregnancy</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                    <li><strong>Glow Nest Sugar Scrub — Feet Scrub</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                    <li><strong>Glow Nest Sugar Scrub — with Epsom Salts</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
-                  </ul>
-                </article>
-
-                <article class="price-card">
-                  <h3>Baby Care</h3>
-                  <ul class="price-list">
+                    <li><strong>Tiny Toes Butter</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
                     <li><strong>Tiny Teeth Soother</strong><span><em>10 ml — $14</em></span></li>
                   </ul>
                 </article>
 
                 <article class="price-card">
-                  <h3>Wellness & Home Care</h3>
+                  <h3>Women Care</h3>
                   <ul class="price-list">
-                    <li><strong>Nest Ease Chest Rub</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Little Love Lotion</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Nip Happens Butter</strong><span><em>2 oz — $15</em></span></li>
+                    <li><strong>Glow Nest Sugar Scrub — Body Polish</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Glow Nest Sugar Scrub — with Epsom Salts</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Glow Nest Sugar Scrub — Foot Scrub</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Glow Nest Sugar Scrub — Post Baby Scrub</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
                     <li><strong>Mama Reset Roller</strong><span><em>10 ml — $14</em></span></li>
+                  </ul>
+                </article>
+
+                <article class="price-card">
+                  <h3>The Whole Nest</h3>
+                  <ul class="price-list">
                     <li><strong>Messy Mama Soap</strong><span><em>12 oz — $22</em><em>16 oz — $28</em></span></li>
                     <li><strong>Messy Mama Soap Bundles</strong><span><em>Twins 12 oz — $42</em><em>Twins 16 oz — $54</em><em>Triplets 12 oz — $63</em><em>Triplets 16 oz — $81</em></span></li>
                     <li><strong>Messy Mama Soap Refills</strong><span><em>12 oz refill — $17</em><em>16 oz refill — $23</em></span></li>
+                    <li><strong>Nest Ease Chest Rub</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                  </ul>
+                </article>
+
+                <article class="price-card">
+                  <h3>Men's Line</h3>
+                  <ul class="price-list">
+                    <li><strong>Beard Nest Balm</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Dude Butter</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
+                    <li><strong>Work Boot Foot Scrub</strong><span><em>2 oz — $15</em><em>4 oz — $22</em><em>8 oz — $32</em></span></li>
                   </ul>
                 </article>
               </div>
@@ -728,6 +741,8 @@
               <article class="scent-menu-card">
                 <h3>Choose Your Scent</h3>
                 <p>A little scent menu for your favourite Little Nest Naturals goodies.</p>
+                <div class="scent-products">Little Love Lotion · Glow Nest Sugar Scrub Body Polish · Man Scrub · Dude Butter · Tiny Toes Butter · Messy Mama Soap Collection</div>
+                <div class="scent-section-title">Women's Scent Line</div>
                 <div class="scent-grid">
                   <div class="scent-item"><div class="scent-title"><span class="scent-number">1</span><strong>Gentle Glow</strong></div><div class="scent-blend">Lavender, Frankincense, Sweet Orange</div><div class="scent-copy">Soft, glowy, and quietly fancy — like your skin just got its life together.</div></div>
                   <div class="scent-item"><div class="scent-title"><span class="scent-number">2</span><strong>Snuggle Spell</strong></div><div class="scent-blend">Lavender, Chamomile</div><div class="scent-copy">For the days when everyone needs to calm their tiny tots and their tiny tempers.</div></div>
@@ -737,7 +752,15 @@
                   <div class="scent-item"><div class="scent-title"><span class="scent-number">6</span><strong>Calm</strong></div><div class="scent-blend">Lavender, Bergamot</div><div class="scent-copy">Fresh, clean, and collected — even if the rest of life is a beautiful little mess.</div></div>
                   <div class="scent-item"><div class="scent-title"><span class="scent-number">7</span><strong>Mama Reset</strong></div><div class="scent-blend">Lavender, Frankincense, Sage</div><div class="scent-copy">A deep breath for mama — because sometimes a reset is part of the routine.</div></div>
                   <div class="scent-item"><div class="scent-title"><span class="scent-number">8</span><strong>Bloom</strong></div><div class="scent-blend">Rose, Lavender</div><div class="scent-copy">Soft, rosy, and effortlessly lovely — a little glow-up without the fuss.</div></div>
-                  <div class="scent-item"><div class="scent-title"><span class="scent-number">10</span><strong>Bare Naked</strong></div><div class="scent-blend">Unscented</div><div class="scent-copy">No scent, no fuss, just the good stuff simple as that.</div></div>
+                  <div class="scent-item"><div class="scent-title"><span class="scent-number">9</span><strong>Bare Naked</strong></div><div class="scent-blend">Unscented</div><div class="scent-copy">No scent, no fuss, just the good stuff — simple as that.</div></div>
+                </div>
+                <div class="scent-section-title">Men's Scent Line</div>
+                <div class="scent-grid">
+                  <div class="scent-item mens"><div class="scent-title"><span class="scent-number">1</span><strong>Bare Knuckles</strong></div><div class="scent-blend">None</div><div class="scent-copy">No scent. No nonsense.</div></div>
+                  <div class="scent-item mens"><div class="scent-title"><span class="scent-number">2</span><strong>Clean Cut</strong></div><div class="scent-blend">Cedarwood, Frankincense, Bergamot, Lavender</div><div class="scent-copy">For the beard, the shave, and the face that survived both.</div></div>
+                  <div class="scent-item mens"><div class="scent-title"><span class="scent-number">3</span><strong>Campfire Clean</strong></div><div class="scent-blend">Cedarwood, Sweet Orange, Frankincense</div><div class="scent-copy">Rugged, but still allowed on the couch.</div></div>
+                  <div class="scent-item mens"><div class="scent-title"><span class="scent-number">4</span><strong>Fresh Tracks</strong></div><div class="scent-blend">Peppermint, Eucalyptus, Cedarwood</div><div class="scent-copy">Fresh enough to come back inside.</div></div>
+                  <div class="scent-item mens"><div class="scent-title"><span class="scent-number">5</span><strong>Locker Room Rescue</strong></div><div class="scent-blend">Lime, Bergamot, Cedarwood</div><div class="scent-copy">For the rink, the gym, and the ride home.</div></div>
                 </div>
               </article>
             </div>
@@ -841,12 +864,12 @@
         <div class="container">
           <div class="section-head center">
             <div class="eyebrow">Why Families Love It</div>
-            <h2>Natural, handmade, and easy to gift.</h2>
+            <h2>Organic, handmade, and easy to gift.</h2>
           </div>
           <div class="values-grid">
-            <article class="value-card"><div class="value-icon">🌿</div><h3>Natural Ingredients</h3><p>Made with simple, thoughtful ingredients families can feel good about using.</p></article>
+            <article class="value-card"><div class="value-icon">🌿</div><h3>Organic Ingredients</h3><p>Made with simple, thoughtful ingredients families can feel good about using.</p></article>
             <article class="value-card"><div class="value-icon">🤍</div><h3>Small Batch</h3><p>Handcrafted in smaller runs with care, intention, and attention to detail.</p></article>
-            <article class="value-card"><div class="value-icon">🍼</div><h3>Mom & Baby</h3><p>Products built around the real routines of new moms, babies, and growing families.</p></article>
+            <article class="value-card"><div class="value-icon">🍼</div><h3>The Whole Nest</h3><p>Products built around the real routines of women, babies, men, and growing families.</p></article>
             <article class="value-card"><div class="value-icon">🎁</div><h3>Gift Ready</h3><p>Soft, beautiful bundles for baby showers, postpartum gifts, and everyday care.</p></article>
           </div>
         </div>
@@ -856,11 +879,11 @@
         <div class="container review-layout">
           <div class="section-head">
             <div class="eyebrow">Share the Love</div>
-            <h2>Your review helps another mom choose with confidence.</h2>
-            <p class="section-sub">Already ordered from Little Nest Naturals? Then spill the tea. We would love to hear about your experience and help the next family or person find their new favourite natural organic care product that they can trust.</p>
+            <h2>Your review helps another family choose with confidence.</h2>
+            <p class="section-sub">Already ordered from Little Nest Naturals? Then spill the tea. We would love to hear about your experience and help the next family or person find their new favourite organic care product that they can trust.</p>
           </div>
           <div class="review-card">
-            <p class="quote">“Soft care, natural ingredients, and a brand built around the tenderness of motherhood.”</p>
+            <p class="quote">“Soft organic care and a brand built around everyday rituals for the whole nest.”</p>
             <p class="small">Use the review form to share what you ordered, what you loved, and how it fit into your family routine.</p>
             <div style="height: 22px;"></div>
             <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd_B7pQP1IS-LvNlzsoHUNELaQV_y2HYIU-2xKqGPuRFKsprA/viewform?usp=dialog">Leave a Review / Spill the Tea</a>
