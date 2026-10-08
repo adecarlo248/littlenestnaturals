@@ -104,6 +104,34 @@
 
     .field { margin-bottom: 19px; }
 
+    .consent {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 11px;
+      align-items: start;
+      margin: 4px 0 20px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fffaf2;
+    }
+
+    .consent input {
+      width: 20px;
+      min-height: 20px;
+      margin: 1px 0 0;
+      accent-color: var(--brown);
+    }
+
+    .consent label {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .consent strong { color: var(--brown); }
+
     input {
       width: 100%;
       min-height: 54px;
@@ -168,7 +196,7 @@
         <div class="brand">little nest</div>
         <div class="brand-small">naturals</div>
         <h1 id="giveaway-title">Enter Our Giveaway</h1>
-        <p class="intro">Complete the form below for your chance to win. It only takes a few seconds to enter.</p>
+        <p class="intro">Complete the form below for your chance to win a Christmas gift box filled with $184 worth of Little Nest Naturals products.</p>
       </div>
 
       <form action="https://formsubmit.co/littlenestnaturals@gmail.com" method="POST">
@@ -190,11 +218,16 @@
 
         <div class="field">
           <label for="email">Email address</label>
-          <input id="email" name="Email address" type="email" autocomplete="email" inputmode="email" required />
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+        </div>
+
+        <div class="consent">
+          <input id="marketing-consent" name="Marketing consent" type="checkbox" value="Yes — promotional email and SMS consent given" />
+          <label for="marketing-consent"><strong>Optional marketing consent:</strong> Yes, I agree to receive promotional emails and text messages from Little Nest Naturals about new products and sales. I can unsubscribe at any time. Consent is not required to enter.</label>
         </div>
 
         <button type="submit">Enter the Giveaway</button>
-        <p class="privacy">Your information will be used to administer this giveaway and contact the selected winner. Entering does not subscribe you to marketing messages.</p>
+        <p class="privacy">Your information will be used to administer this giveaway and contact the selected winner. Marketing messages are sent only if you select the optional consent box above.</p>
       </form>
 
       <p class="details"><strong>Good luck!</strong><br />Giveaway details and winner information are provided by Little Nest Naturals.<br /><a class="home-link" href="/">Visit Little Nest Naturals</a></p>
